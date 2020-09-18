@@ -6,8 +6,8 @@
         <%= @user.name %>
       </h1>
       <%= @user.profile %>
-      <% if user_signed_in? %>
-        <%= link_to "Profile Settings", '#' %>
+      <% if current_user %>
+        <%= link_to "Profile Settings", edit_user_path(current_user) %>
       <% else %>
       <% end %>
     </section>
