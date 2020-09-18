@@ -32,7 +32,12 @@
       
      <% end %>
      
-      <%= link_to "Delete", user_path(current_user), method: :delete,
+     <div class="gravatar_edit">
+      <%= gravatar_for @user %>
+      <a href="https://gravatar.com/emails" target="_blank">change</a>
+     </div>
+     
+      <%= link_to "Account Delete", user_path(current_user), method: :delete,
                                   data: { confirm: "You sure?" } %>
   </div>
 </div>
