@@ -4,7 +4,7 @@
         <nav>
           <ul class="nav navbar-nav navbar-right">
             <li><%= link_to "Home", root_path %></li>
-            <li><%= link_to "New Post", '#' %></li>
+            <li><%= link_to "New Post", new_post_path %></li>
             <li><%= link_to "My page", current_user %></li>
             <% if user_signed_in? %>
           <li class="dropdown">
