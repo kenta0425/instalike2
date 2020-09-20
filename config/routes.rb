@@ -14,6 +14,11 @@ Rails.application.routes.draw do
   
   root 'index#home'
   get    '/terms',  to: 'index#terms'
-  resources :users, only: [:show, :edit, :update, :destroy]
-  resources :posts, only: [:new, :create, :destroy]
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
+  resources :posts,         only: [:new, :create, :destroy]
+  resources :relationships, only: [:create, :destroy]
 end
