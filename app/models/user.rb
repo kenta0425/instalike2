@@ -1,5 +1,8 @@
 class User < ApplicationRecord
   has_many :posts, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :likes, dependent: :destroy
+  has_many :like_posts, through: :likes, source: :post
   has_many :active_relationships, class_name:  "Relationship",
                                   foreign_key: "follower_id",
                                   dependent:   :destroy
@@ -15,6 +18,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :authentication_keys => [:username]
          
   validates :username, uniqueness: true
+  validates_uniqueness_of :username
   
   def email_required?
     false

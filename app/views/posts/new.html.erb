@@ -10,7 +10,7 @@
     <%= f.text_area :content, placeholder: "Compose new post...", class: 'form-control' %>
     
     <%= f.label :select_image %> (only png & jpeg)
-    <%= f.file_field :image, , accept: "image/jpeg,image/png", class: 'form-control' %>
+    <%= f.file_field :image, accept: "image/jpeg,image/png", class: 'form-control' %>
       
     <%= f.submit "Post", class: "btn btn-primary" %>
   <% end %>

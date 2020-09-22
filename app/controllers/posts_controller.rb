@@ -5,6 +5,12 @@ class PostsController < ApplicationController
     @post = Post.new
   end
   
+  def show
+    @post = Post.find(params[:id])
+    @comment = Comment.new
+    @comments = @post.comments.order(created_at: :desc)
+  end
+  
   def create
     @post = current_user.posts.build(post_params)
     @post.image.attach(params[:post][:image])

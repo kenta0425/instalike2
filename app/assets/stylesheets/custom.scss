@@ -1,6 +1,9 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+@import 'font-awesome-sprockets';
+@import 'font-awesome';
+
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
@@ -236,4 +239,26 @@ span.image {
   input {
     border: 0;
   }
+}
+
+/* Users index */
+
+.users {
+  list-style: none;
+  margin: 0;
+  li {
+    overflow: auto;
+    padding: 10px 0;
+    border-bottom: 1px solid $gray-lighter;
+  }
+}
+
+// fas fa-heart
+
+.like-btn{
+  color: #8899a6;
+}
+
+.like-btn-unlike {
+  color: #ff2581;
 }
