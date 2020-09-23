@@ -81,6 +81,10 @@ p {
   text-decoration: none;
 }
 
+.h-icon{
+  font-size: 1.2em;
+}
+
 /* miscellaneous */
 
 .debug_dump {
@@ -262,3 +266,36 @@ span.image {
 .like-btn-unlike {
   color: #ff2581;
 }
+
+/* search box */
+
+dl.searchbox{
+  width: 200px;
+  height: 30px;
+  position:relative;
+  background-color:#fff;
+  border:1px solid #aaa;
+  border-radius:6px;
+  margin-top:10px;
+  margin-bottom:0;
+}
+
+dl.searchbox dt input{
+  width:70%;
+  height:20px;
+  line-height:30px;
+  background:none;
+  border:none;
+}
+
+dl.searchbox dd{
+  position:absolute;
+  top:1px;
+  right:1px;
+  width:30%;
+}
+
+dd{
+  text-align: right;
+}
+

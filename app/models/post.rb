@@ -2,8 +2,8 @@ class Post < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :comments, dependent: :destroy
-  has_many :likes
-  has_many :users, through: :likes
+  has_many :likes, dependent: :destroy
+  has_many :users, through: :likes, dependent: :destroy
   has_many :notifications, dependent: :destroy
   
   default_scope -> { order(created_at: :desc) }
@@ -58,5 +58,13 @@ class Post < ApplicationRecord
         notification.checked = true
       end
       notification.save if notification.valid?
+  end
+  
+  def self.search(search) #ここでのself.はMicropost.を意味する
+    if search
+      where(['content LIKE ?', "%#{search}%"]) #検索とcontentの部分一致を表示。Micropost.は省略。
+    else
+      all #全て表示。Micropost.は省略。
+    end
   end
 end

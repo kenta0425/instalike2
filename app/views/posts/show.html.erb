@@ -2,20 +2,19 @@
 <div class="row">
   <div class="col-md-8">
     <%= image_tag @post.display_image if @post.image.attached? %>
-    <%= @post.content %>
   </div>
   <div id="like-btn-<%= @post.id %>">
    <%= render 'likes/like', post: @post %>
   </div>
   <div class="row">
-    <ul>
-        <li class="comment-create">
+      <%= link_to @post.user.name, @post.user %>
+      <%= @post.content %>
+        <div class="comment-create">
             <h3 class="text-left title">Comments</h3>
-        </li>
-        <li id="comments_area">
+        </div>
+        <div id="comments_area">
             <%= render partial: 'comments/index', locals: { comments: @comments } %>
-        </li>
-    </ul>
+        </div>
     <hr>
     <% if user_signed_in? %>
         <div class="comment-create">
