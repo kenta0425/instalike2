@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   get    '/terms',  to: 'index#terms'
   resources :users do
     member do
-      get :following, :followers
+      get :following, :followers, :users_posts
     end
   end
   # resources :posts,         only: [:new, :show, :create, :destroy]
@@ -28,5 +28,6 @@ Rails.application.routes.draw do
     delete '/add' => 'likes#destroy'
   end
   resources :notifications, only: [:index, :destroy]
+  get "following_posts" => "posts#following_posts"
   # resources :likes, only: [:create, :destroy]
 end

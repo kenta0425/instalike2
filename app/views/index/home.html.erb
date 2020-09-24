@@ -1,7 +1,28 @@
 <% if user_signed_in? %>
   <div class="row">
-    <div class="col-md-8">
-      <%= render 'shared/feed' %>
+    <div class="feeds">
+      <% @feeds.each do |post| %>
+      <div class="card mb-4">
+        <span class="user-name">
+          <%= link_to post.user.name, post.user %>
+        </span>
+        <div class="card-image">
+          <figure class="image">
+            <%= link_to [post] do %>
+              <%= image_tag post.image.variant(resize: '500x500') if post.image.attached? %>
+            <% end %>
+          </figure>
+          <div id="like-btn-<%= post.id %>">
+            <%= render 'likes/like', post: post %>
+          </div>
+          <div class="post-content">
+            <%= post.content %>
+          </div>
+          <span class="timestamp">
+            <%= time_ago_in_words(post.created_at) %> ago.
+          </span>
+      </div>
+      <% end %>
     </div>
   </div>
 <% else %>

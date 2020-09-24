@@ -12,8 +12,9 @@ class Post < ApplicationRecord
   validates :image,   content_type: { in: %w[image/jpeg image/png],
                                       message: "must be a valid image format" },
                       size:         { less_than: 5.megabytes,
-                                      message: "should be less than 5MB" }
-                                      
+                                      message: "should be less than 5MB" },
+                                      presence: true
+  
   def display_image
     image.variant(resize_to_limit: [500, 500])
   end
