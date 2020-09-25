@@ -85,6 +85,11 @@ p {
   font-size: 1.2em;
 }
 
+.card-image{
+  border-bottom: 1px solid #e8e8e8;
+  margin-top: 10px;
+}
+
 /* miscellaneous */
 
 .debug_dump {
@@ -203,6 +208,8 @@ input {
 .posts {
   list-style: none;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
   li {
     padding: 10px 0;
     border-top: 1px solid #e8e8e8;
@@ -213,16 +220,11 @@ input {
   }
   .content {
     display: block;
-    margin-left: 60px;
+    margin-left: 10px;
     img {
       display: block;
       padding: 5px 0;
     }
-  }
-  .timestamp {
-    color: $gray-light;
-    display: block;
-    margin-left: 60px;
   }
   .gravatar {
     float: left;
@@ -257,16 +259,25 @@ span.image {
   }
 }
 
-// fas fa-heart
+/* home icon */
 
-.like-btn{
-  color: #8899a6;
+.home-icons{
+  display: flex;
+  .like-btn{
+    color: #8899a6;
+    font-size: 23px;
+  }
+  
+  .like-btn-unlike {
+    color: #ff2581;
+    font-size: 23px;
+  }
+  .comment-icon{
+    color: #8899a6;
+    font-size: 23px;
+    margin-left: 10px;
+  }
 }
-
-.like-btn-unlike {
-  color: #ff2581;
-}
-
 /* search box */
 
 dl.searchbox{
@@ -299,3 +310,15 @@ dd{
   text-align: right;
 }
 
+.user-name{
+  font-size: 20px;
+}
+.timestamp {
+  color: #999999;
+  display: block;
+}
+
+.post-content{
+  margin-top: 3px;
+  margin-bottom: 3px;
+}

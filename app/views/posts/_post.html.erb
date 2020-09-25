@@ -1,15 +1,9 @@
-<li id="post-<%= post.id %>">
-  <span class="user">
-    <%= link_to post.user.name, post.user %>
-  </span>
-  <span class="content">
-    <%= link_to post_path(post.id), target: "_self" do %>
-      <%= image_tag post.display_image if post.image.attached? %>
-    <% end %>
-    <%= post.content %>
-  </span>
-  
-  <span class="timestamp">
-    Posted <%= time_ago_in_words(post.created_at) %> ago.
-  </span>
-</li>
+<div class="post-content">
+  <li id="post-<%= post.id %>">
+    <span class="content">
+      <%= link_to post_path(post.id), target: "_self" do %>
+        <%= image_tag post.display_image if post.image.attached? %>
+      <% end %>
+    </span>
+  </li>
+</div>

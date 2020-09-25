@@ -3,17 +3,22 @@
     <div class="feeds">
       <% @feeds.each do |post| %>
       <div class="card mb-4">
-        <span class="user-name">
-          <%= link_to post.user.name, post.user %>
-        </span>
         <div class="card-image">
+          <span class="user-name">
+            <%= link_to post.user.name, post.user %>
+          </span>
           <figure class="image">
             <%= link_to [post] do %>
               <%= image_tag post.image.variant(resize: '500x500') if post.image.attached? %>
             <% end %>
           </figure>
-          <div id="like-btn-<%= post.id %>">
-            <%= render 'likes/like', post: post %>
+          <div class="home-icons">
+            <div id="like-btn-<%= post.id %>">
+              <%= render 'likes/like', post: post %>
+            </div>
+            <div class="comment-icon">
+              <i class="far fa-comment"></i>
+            </div>
           </div>
           <div class="post-content">
             <%= post.content %>

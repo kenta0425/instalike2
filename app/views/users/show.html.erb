@@ -19,10 +19,10 @@
   <div class="col-md-8">
     <%= render 'follow_form' if user_signed_in? %>
     <% if @user.posts.any? %>
-      <h3>Posts (<%= @user.posts.count %>)</h3>
-      <ol class="posts">
+      <p>Posts (<%= @user.posts.count %>)</p>
+      <divl class="posts">
         <%= render @posts %>
-      </ol>
+      </divl>
       <%= will_paginate @posts %>
     <% end %>
   </div>
