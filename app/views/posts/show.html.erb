@@ -1,26 +1,14 @@
-<% provide(:title, "Post") %>
+<% provide(:title, "Comment") %>
 <div class="row">
-  <div class="col-md-8">
-    <%= image_tag @post.display_image if @post.image.attached? %>
-  </div>
-  <div id="like-btn-<%= @post.id %>">
-   <%= render 'likes/like', post: @post %>
-  </div>
-  <div class="row">
       <%= link_to @post.user.name, @post.user %>
       <%= @post.content %>
-        <div class="comment-create">
-            <h3 class="text-left title">Comments</h3>
-        </div>
         <div id="comments_area">
-            <%= render partial: 'comments/index', locals: { comments: @comments } %>
+          <%= render partial: 'comments/index', locals: { comments: @comments } %>
         </div>
-    <hr>
     <% if user_signed_in? %>
         <div class="comment-create">
             <%= render partial: 'comments/form', locals: { comment: @comment, post: @post } %>
         </div>
     <% end %>
-  </div>
     <%= link_to "back", :back %>
 </div>

@@ -152,7 +152,7 @@ aside {
     }
     &:hover {
       text-decoration: none;
-      color: blue;
+      color: #8899a6;
     }
   }
   strong {
@@ -273,9 +273,14 @@ span.image {
     font-size: 23px;
   }
   .comment-icon{
+    .comment-a{
     color: #8899a6;
     font-size: 23px;
     margin-left: 10px;
+    }
+    .comment-a:hover{
+      color: #666666;
+    }
   }
 }
 /* search box */
@@ -316,9 +321,18 @@ dd{
 .timestamp {
   color: #999999;
   display: block;
+  margin-bottom: 5px;
 }
 
 .post-content{
   margin-top: 3px;
   margin-bottom: 3px;
+}
+
+/* comment box */
+
+.comment-box{
+  border-top: 1px solid #eeeeee;
+  margin: 5px 0 5px 0;
+  padding: 5px 0 5px 0;
 }

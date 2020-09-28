@@ -8,7 +8,7 @@
       </h1>
       <%= @user.profile %>
       <% if current_user %>
-        <%= link_to "Profile Settings", edit_user_path(current_user) %>
+        <%= link_to "Edit Profile", edit_user_path(current_user) %>
       <% else %>
       <% end %>
     </section>
@@ -21,7 +21,20 @@
     <% if @user.posts.any? %>
       <p>Posts (<%= @user.posts.count %>)</p>
       <divl class="posts">
-        <%= render @posts %>
+        <% @myfeeds.each do |post| %>
+        <li id="post-<%= post.id %>">
+    <span class="content">
+      <!-- Button trigger modal -->
+      <button type="button" data-toggle="modal" data-target="#exampleModal-<%= post.id %>">
+        <%= image_tag post.image.variant(resize: '230x230') if post.image.attached? %>
+      </button>
+      
+      <% @post = post %>
+      <!-- Modal -->
+      <%= render 'posts/modal', post: @post %>
+    </span>
+    </li>
+    <% end %>
       </divl>
       <%= will_paginate @posts %>
     <% end %>

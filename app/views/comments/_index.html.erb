@@ -1,7 +1,6 @@
 <% @comments.each do |c| %>
-  <div>
+  <div class="comment-box">
     <a href="/users/<%= @post.user.id %>"></a>
     <%= c.content %>
-    <hr>
   </div>
 <% end %>
