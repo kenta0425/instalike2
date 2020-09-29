@@ -1,30 +1,37 @@
-Name : Instalike
+< Apllication Name >
+
+Instalike
+
 ====
 
-Overview : This application is a clone of instagarm.
+< Overview >
+
+This application is a clone of instagarm.
 I made it for sub subject.
 It has some functions.
 
-Signup, User Delete
 
-Login, Logout
+1.Signup, User Delete
 
-Profile edit
+2.Login, Logout
 
-Post picture
+3.Profile edit
 
-Post comments
+4.Post picture
 
-Like button
+5.Post comments
 
-follow
+6.Like button
 
-Notification
+7.Follow
 
-Search
+8.Notification
 
+9.Search
 
-[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+====
+
+[MIT](https://github.com/kenta0425/instalike)
 
 ## Author
 
