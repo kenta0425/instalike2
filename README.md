@@ -1,24 +1,31 @@
-# README
+Name : Instalike
+====
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Overview : This application is a clone of instagarm.
+I made it for sub subject.
+It has some functions.
 
-Things you may want to cover:
+Signup, User Delete
 
-* Ruby version
+Login, Logout
 
-* System dependencies
+Profile edit
 
-* Configuration
+Post picture
 
-* Database creation
+Post comments
 
-* Database initialization
+Like button
 
-* How to run the test suite
+follow
 
-* Services (job queues, cache servers, search engines, etc.)
+Notification
 
-* Deployment instructions
+Search
 
-* ...
+
+[MIT](https://github.com/tcnksm/tool/blob/master/LICENCE)
+
+## Author
+
+[URL](https://kt-instalike.herokuapp.com/)
