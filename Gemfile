@@ -17,6 +17,7 @@ gem 'font-awesome-sass',          '5.13.0'
 gem 'webpacker',                  '4.2.2'
 gem 'turbolinks',                 '5.2.1'
 gem 'jbuilder',                   '2.10.0'
+gem 'google-analytics-rails'
 gem 'bootsnap',                   '1.4.6', require: false
 
 group :development, :test do
