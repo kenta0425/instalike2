@@ -16,7 +16,7 @@ class Post < ApplicationRecord
                                       presence: true
   
   def display_image
-    image.variant(resize_to_limit: [230, 230])
+    image.variant(resize_to_fill: [230, 230])
   end
   
   def liked_by?(user)
@@ -61,11 +61,11 @@ class Post < ApplicationRecord
       notification.save if notification.valid?
   end
   
-  def self.search(search) #ここでのself.はMicropost.を意味する
+  def self.search(search) 
     if search
-      where(['content LIKE ?', "%#{search}%"]) #検索とcontentの部分一致を表示。Micropost.は省略。
+      where(['content LIKE ?', "%#{search}%"])
     else
-      all #全て表示。Micropost.は省略。
+      all 
     end
   end
 end
